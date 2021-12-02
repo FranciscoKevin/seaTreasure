@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+:root {
+    --light: #fcfafa;
+    --dark: #0e0000;
+    --dark-transparent: #0e0000dd;
+
+    --main-font: 'Pirata One', cursive;
+    --text-size: 18px;
+
+    --navbar-size:20px;
+    --container-size: 100%;
+
+    --spacing: 8px;
+    --spacing-2: calc(var(--spacing) * 2);
+    --spacing-3: calc(var(--spacing) * 3);
+    --spacing-4: calc(var(--spacing) * 4);
+}
+
+body {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: var(--navbar-size);
+    font-family: var(--main-font);
+}
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--light);
+}
+
+.introduction {
+    background-image: url('../images/papyrus.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: calc(var(--spacing) * 8) calc(var(--spacing) * 16);
+    font-size: var(--text-size);
+    min-height: var(--container-size);
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    display: inline-block;
+    position: relative;
+    color: var(--dark-transparent);
+    font-size: 20px;
+}
+  
+.link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0a58ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.introduction p::first-letter {
+    font-family: var(--main-font);
+    font-size: 2em;
+}
+
+.sparrow {
+    width: 200px;
+    filter: sepia(0.5);
+    mix-blend-mode: multiply;
+}
+
+.compass {
+    width: 150px;
+    filter: sepia(1);
+}
+
+.hint {
+    font-family: var(--main-font);
+}
+
+blockquote {
+    font-style: italic;
+    margin-top:0.5em;
+}
+
+/*Mobile*/
+@media (max-width: 640px) {
+    .introduction {
+        padding: 50px;
+    }
+}

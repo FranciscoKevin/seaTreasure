@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Carte mystérieuse</h1>
+        <div class="row">
+            <!-- NAVIGATION-->
+            <div class="col-md-3">
+                <div class="infos">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                    <h4>Coordonnées: {{ boat.coordx }}, {{ boat.coordy }} ({{ type }})</h4> 
+                        <div class="navigation">
+                            <div class=" nav-pos position-relative">
+                                <a class="nav-north" href="{{ path("moveDirection", {"direction" : "N"}) }}">N</a>
+                                <a class="nav-west" href="{{ path("moveDirection", {"direction" : "W"}) }}">O</a>
+                                <a class="nav-east" href="{{ path("moveDirection", {"direction" : "E"}) }}">E</a>
+                                <a class="nav-south" href="{{ path("moveDirection", {"direction" : "S"}) }}">S</a>
+                            </div>
+                        </div>
+                        <a href="{{ path('homepage') }}" class="mt-3 link"><i class="fas fa-book-dead"></i> Instructions</a>
+                    </div>
+                </div>
+             </div>
+             <!-- /NAVIGATION-->
+            <div class="col-md-9">
+                <!-- MAP-->
+                <div class="map">
+                    {% for y in 0..6 %}
+                        <div class="row">
+                            {% for x in 0..12 %}
+                                {% if map[x][y] is defined %}
+                                    <div class="tile col-1 {{ map[x][y].type }}">
+                                        <div class="tile-name">{{ map[x][y].name ?? ' '}}</div>
+                                        <div class="tile-name coords">{{ map[x][y].coordX }},{{ map[x][y].coordY }}</div>
+                                        {% if boat.coordX == x and boat.coordY == y %}
+                                            <img class="boat" src="{{ asset('asset/images/boat.png') }}" height="65px"
+                                                 alt="bateau"/>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- /MAP-->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

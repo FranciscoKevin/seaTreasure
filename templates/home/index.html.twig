@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">Sea Treasure</h1>
+        <div class="row introduction">
+            <div class="col-sm-9">
+                <p>
+                    Le pirate le plus célèbre au monde, le grand et inimitable capitaine <strong>Jack Sparrow</strong>, est à la recherche du <strong>trésor perdu de Rackham le Rouge</strong>,
+                    un vieux pirate impitoyable qui a semé la terreur dans les mers des Caraïbes, il y a très longtemps.
+                </p>
+                <p>
+                    Un vieux marin du Royaume de France, le <strong>capitaine Haddock</strong>, a donné à Jack une <strong>carte mystérieuse</strong> avec de nombreuses îles.
+                    Haddock savait seulement que le trésor est enterré sur l'une de ces îles.
+                    Jack et son équipage ont pour mission de naviguer vers chacun d'eux, jusqu'à ce qu'ils trouvent les pièces d'or
+                    et les pierres précieuses qui constituent le <strong>trésor caché</strong>.
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <img class="sparrow" src="{{ asset('asset/images/sparrow.jpg') }}" alt="Jack Sparrow">
+            </div>
+            <div class="col-sm-12 text-center">
+                <img class="compass" src="{{ asset('asset/images/compass.png') }}" alt="compass">
+            </div>
+            <div class="col-sm-12">
+                <p>
+                    Prenez le contrôle du <strong>Black Perl</strong>, le magnifique navire de Jack, et naviguez parmi les océans à l'aide de votre <strong>Boussole magique</strong>.<br/>
+                    Évitez les krakens, les tempêtes ou autres pirates et soyez le premier à trouver le trésor !
+                    Il est temps de finir votre dernière bouteille de rhum et commençons cette aventure !
+                </p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <p>
+                Capitaine ...
+                </p>
+                <a href="{{ path('map') }}" class="link">Commencer<i class="fas fa-anchor"></i></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
